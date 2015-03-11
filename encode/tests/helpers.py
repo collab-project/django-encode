@@ -22,7 +22,7 @@ def encoders():
     ffmpeg.name = u"FFmpeg"
     ffmpeg.description = u"FFmpeg is a complete, cross-platform solution to record, convert and stream audio and video."
     ffmpeg.documentation_url = u"https://ffmpeg.org/ffmpeg.html"
-    ffmpeg.path = u"/usr/local/bin/ffmpeg"
+    ffmpeg.path = u"ffmpeg"
     ffmpeg.klass = u"encode.encoders.FFMpegEncoder"
 
     convert = Encoder()
