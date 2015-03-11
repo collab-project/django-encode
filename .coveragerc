@@ -1,0 +1,8 @@
+# .coveragerc to control coverage.py
+[run]
+omit =
+    setup.py
+    runtests.py
+    encode/tests/*
+    .tox/*
+    doc/*

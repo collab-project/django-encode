@@ -1,0 +1,5 @@
+django
+celery>=3.1
+django-appconf>=0.6
+django-queued-storage>=0.6
+https://github.com/thijstriemstra/python-video-converter/archive/master.zip

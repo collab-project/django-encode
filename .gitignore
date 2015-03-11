@@ -1,0 +1,13 @@
+*.py[co]
+.project
+.pydevproject
+.settings
+*.egg
+*.egg-info
+dist
+build
+.coverage
+*.pid
+doc/_build
+htmlcov/
+.tox/
