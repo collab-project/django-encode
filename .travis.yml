@@ -1,6 +1,8 @@
 language: python
 python:
   - "2.7"
+before_install:
+  - sudo apt-get install -qq imagemagick ffmpeg
 install:
   - "pip install -r requirements/production.txt"
   - "pip install -r requirements/testing.txt"
