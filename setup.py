@@ -48,12 +48,12 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
-        'Topic :: Software Development'
+        'Topic :: Software Development',
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',
     ],
-    author='Thijs Triemstra',
+    author='Collab',
     author_email='info@collab.nl',
-    url='http://github.com/thijstriemstra',
+    url='http://github.com/collab-project/django-encode',
     license='MIT'
 )
