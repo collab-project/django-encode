@@ -6,4 +6,4 @@ install:
   - "pip install -r requirements/testing.txt"
   - "pip install ."
 script:
-  - tox -e $TOX_ENV
+  - tox -e py27,coverage
