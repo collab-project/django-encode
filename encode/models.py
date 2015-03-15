@@ -448,7 +448,7 @@ class MediaBase(models.Model):
 
         if os.path.exists(path):
             # put encoded file in external storage
-            with open(path) as encoded_file:
+            with open(path, 'rb') as encoded_file:
 
                 media_file = MediaFile(title=file_name)
                 try:
