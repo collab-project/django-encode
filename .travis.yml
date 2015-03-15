@@ -1,6 +1,7 @@
 language: python
 python:
   - "2.7"
+  - "3.4"
 install:
   - "pip install -r requirements/production.txt"
   - "pip install -r requirements/testing.txt"
@@ -10,4 +11,5 @@ before_script:
   - sudo apt-get update -q
   - sudo apt-get install imagemagick ffmpeg
 script:
-  - tox -e py27,coverage
+  - if [[ $TRAVIS_PYTHON_VERSION == '2.7' ]]; then tox -e py27,coverage; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == '3.4' ]]; then tox -e py34; fi
