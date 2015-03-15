@@ -46,9 +46,9 @@ ENCODE_MEDIA_ROOT = MEDIA_ROOT
 ENCODE_DEFAULT_ENCODER_CLASS = "encode.encoders.BasicEncoder"
 
 #: Encoding profiles configuration.
-ENCODE_AUDIO_PROFILES = [u"MP3 Audio", u"Ogg Audio"]
-ENCODE_VIDEO_PROFILES = [u"MP4", u"WebM Audio/Video"]
-ENCODE_IMAGE_PROFILES = [u"PNG"]
+ENCODE_AUDIO_PROFILES = ["MP3 Audio", "Ogg Audio"]
+ENCODE_VIDEO_PROFILES = ["MP4", "WebM Audio/Video"]
+ENCODE_IMAGE_PROFILES = ["PNG"]
 
 #: Django file storage used for storing incoming media uploads.
 ENCODE_LOCAL_FILE_STORAGE = LOCAL_FILE_STORAGE

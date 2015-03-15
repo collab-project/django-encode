@@ -67,7 +67,7 @@ def get_media_upload_to(instance, filename):
     else:
         file_type = 'files'
 
-    url = u'{category}/{file_type}/{filename}'.format(
+    url = '{category}/{file_type}/{filename}'.format(
         category=settings.ENCODE_MEDIA_PATH_NAME,
         file_type=file_type,
         filename=filename)

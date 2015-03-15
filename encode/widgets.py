@@ -20,7 +20,7 @@ class MediaDisplayWidget(forms.SelectMultiple):
 
     def render(self, name, value, attrs=None, choices=()):
         paths = []
-        script = u''
+        script = ''
 
         if value is not None:
             for option_value, option_label in chain(self.choices, choices):
@@ -32,7 +32,7 @@ class MediaDisplayWidget(forms.SelectMultiple):
                     except models.MediaFile.DoesNotExist:
                         pass
 
-            script = u'''<script type="text/javascript">
+            script = '''<script type="text/javascript">
                 $(document).ready(function() {
                     var elem = $('#id_%(name)s');
                     var widget = new collab.PreviewWidget(elem, %(paths)s);

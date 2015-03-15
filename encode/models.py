@@ -4,7 +4,7 @@
 Models.
 """
 
-from __future__ import absolute_import
+
 
 import os
 import shlex
@@ -261,7 +261,7 @@ class EncodingProfile(models.Model):
         verbose_name_plural = _('Encoding profiles')
 
     def __unicode__(self):
-        return unicode(self.name)
+        return str(self.name)
 
 
 class MediaBase(models.Model):
@@ -568,7 +568,7 @@ class MediaBase(models.Model):
         verbose_name_plural = _("Media Files")
 
     def __unicode__(self):
-        return unicode(self.title)
+        return str(self.title)
 
 
 class Video(MediaBase):

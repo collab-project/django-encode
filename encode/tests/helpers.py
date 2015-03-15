@@ -19,17 +19,17 @@ def encoders():
     """
     from encode.models import Encoder
     ffmpeg = Encoder()
-    ffmpeg.name = u"FFmpeg"
-    ffmpeg.description = u"FFmpeg is a complete, cross-platform solution to record, convert and stream audio and video."
-    ffmpeg.documentation_url = u"https://ffmpeg.org/ffmpeg.html"
-    ffmpeg.path = u"ffmpeg"
-    ffmpeg.klass = u"encode.encoders.FFMpegEncoder"
+    ffmpeg.name = "FFmpeg"
+    ffmpeg.description = "FFmpeg is a complete, cross-platform solution to record, convert and stream audio and video."
+    ffmpeg.documentation_url = "https://ffmpeg.org/ffmpeg.html"
+    ffmpeg.path = "ffmpeg"
+    ffmpeg.klass = "encode.encoders.FFMpegEncoder"
 
     convert = Encoder()
-    convert.name = u"convert (ImageMagick)"
-    convert.description = u"Converts between image formats as well as resize an image, blur, crop, despeckle, dither, draw on, flip, join, re-sample, and much more."
-    convert.documentation_url = u"http://www.imagemagick.org/script/convert.php"
-    convert.path = u"convert"
+    convert.name = "convert (ImageMagick)"
+    convert.description = "Converts between image formats as well as resize an image, blur, crop, despeckle, dither, draw on, flip, join, re-sample, and much more."
+    convert.documentation_url = "http://www.imagemagick.org/script/convert.php"
+    convert.path = "convert"
 
     return [ffmpeg, convert]
 
@@ -41,97 +41,97 @@ def encodingProfiles(ffmpeg, convert):
     """
     from encode.models import EncodingProfile
     flash_video = EncodingProfile()
-    flash_video.name = u"Flash Video"
-    flash_video.description = u"The original Flash video container format. Also allows some other more exotic video codecs like On2 VP6 and Screen video."
-    flash_video.mime_type = u"video/x-flv"
-    flash_video.container = u"flv"
+    flash_video.name = "Flash Video"
+    flash_video.description = "The original Flash video container format. Also allows some other more exotic video codecs like On2 VP6 and Screen video."
+    flash_video.mime_type = "video/x-flv"
+    flash_video.container = "flv"
     # formats at http://flash.flowplayer.org/documentation/installation/formats.html
     # encoding html5 at http://www.adamish.com/blog/archives/496
-    flash_video.video_codec = u"FLV (Sorenson H.263)"
-    flash_video.audio_codec = u"MP3"
+    flash_video.video_codec = "FLV (Sorenson H.263)"
+    flash_video.audio_codec = "MP3"
     flash_video.encoder = ffmpeg
-    flash_video.command = u'-c:v flv -c:a libmp3lame'
+    flash_video.command = '-c:v flv -c:a libmp3lame'
 
     flash_video2 = EncodingProfile()
-    flash_video2.name = u"Flash Video 2"
-    flash_video2.description = u"Similar to MP4, but Flash specific, or H.264/AAC in a FLV container. Useful for high-quality php-pseudostreaming, but rare otherwise."
-    flash_video2.mime_type = u"video/mp4"
-    flash_video2.container = u"f4v"
-    flash_video2.video_codec = u"H.264"
-    flash_video2.audio_codec = u"AAC"
+    flash_video2.name = "Flash Video 2"
+    flash_video2.description = "Similar to MP4, but Flash specific, or H.264/AAC in a FLV container. Useful for high-quality php-pseudostreaming, but rare otherwise."
+    flash_video2.mime_type = "video/mp4"
+    flash_video2.container = "f4v"
+    flash_video2.video_codec = "H.264"
+    flash_video2.audio_codec = "AAC"
     flash_video2.encoder = ffmpeg
-    flash_video2.command = u'-s 320x240 -r 30000/1001 -b 200k -bt 240k -vcodec libx264 -vpre ipod320 -acodec libfaac -ac 2 -ar 48000 -ab 192k'
+    flash_video2.command = '-s 320x240 -r 30000/1001 -b 200k -bt 240k -vcodec libx264 -vpre ipod320 -acodec libfaac -ac 2 -ar 48000 -ab 192k'
 
     mp4 = EncodingProfile()
-    mp4.name = u"MP4"
-    mp4.description = u"MPEG-4 Part 14 or MP4 (formally ISO/IEC 14496-14:2003) is a multimedia container format standard specified as a part of MPEG-4. It is most commonly used to store digital video and digital audio streams, especially those defined by MPEG, but can also be used to store other data such as subtitles and still images."
-    mp4.mime_type = u"video/mp4"
-    mp4.container = u"mp4"
-    mp4.video_codec = u"H.264"
-    mp4.audio_codec = u"AAC"
+    mp4.name = "MP4"
+    mp4.description = "MPEG-4 Part 14 or MP4 (formally ISO/IEC 14496-14:2003) is a multimedia container format standard specified as a part of MPEG-4. It is most commonly used to store digital video and digital audio streams, especially those defined by MPEG, but can also be used to store other data such as subtitles and still images."
+    mp4.mime_type = "video/mp4"
+    mp4.container = "mp4"
+    mp4.video_codec = "H.264"
+    mp4.audio_codec = "AAC"
     mp4.encoder = ffmpeg
     # see https://ffmpeg.org/trac/ffmpeg/wiki/x264EncodingGuide
-    mp4.command = u'-c:v libx264 -preset:v veryfast -crf 22 -ac 2 -c:a libfdk_aac'
+    mp4.command = '-c:v libx264 -preset:v veryfast -crf 22 -ac 2 -c:a libfdk_aac'
 
     webm_av = EncodingProfile()
-    webm_av.name = u"WebM Audio/Video"
-    webm_av.description = u"WebM is an open, royalty-free, media file format designed for the web. WebM files consist of video streams compressed with the VP8 video codec and audio streams compressed with the Vorbis audio codec. The WebM file structure is based on the Matroska container."
-    webm_av.mime_type = u"video/webm"
-    webm_av.container = u"webm"
-    webm_av.video_codec = u"VP8"
-    webm_av.audio_codec = u"Vorbis"
+    webm_av.name = "WebM Audio/Video"
+    webm_av.description = "WebM is an open, royalty-free, media file format designed for the web. WebM files consist of video streams compressed with the VP8 video codec and audio streams compressed with the Vorbis audio codec. The WebM file structure is based on the Matroska container."
+    webm_av.mime_type = "video/webm"
+    webm_av.container = "webm"
+    webm_av.video_codec = "VP8"
+    webm_av.audio_codec = "Vorbis"
     webm_av.encoder = ffmpeg
-    webm_av.command = u'-c:v libvpx -c:a libvorbis'
+    webm_av.command = '-c:v libvpx -c:a libvorbis'
 
     # supported by chrome, firefox, opera
     webm_audio = EncodingProfile()
-    webm_audio.name = u"WebM Audio"
-    webm_audio.description = u"WebM is an open, royalty-free, media file format designed for the web. WebM files consist of video streams compressed with the VP8 video codec and audio streams compressed with the Vorbis audio codec. The WebM file structure is based on the Matroska container."
-    webm_audio.mime_type = u"audio/webm"
-    webm_audio.container = u"webm"
-    webm_audio.audio_codec = u"Vorbis"
+    webm_audio.name = "WebM Audio"
+    webm_audio.description = "WebM is an open, royalty-free, media file format designed for the web. WebM files consist of video streams compressed with the VP8 video codec and audio streams compressed with the Vorbis audio codec. The WebM file structure is based on the Matroska container."
+    webm_audio.mime_type = "audio/webm"
+    webm_audio.container = "webm"
+    webm_audio.audio_codec = "Vorbis"
     webm_audio.encoder = ffmpeg
-    webm_audio.command = u'-ab 128k -c:a libvorbis'
+    webm_audio.command = '-ab 128k -c:a libvorbis'
 
     ogg_av = EncodingProfile()
-    ogg_av.name = u"Ogg Audio/Video"
-    ogg_av.description = u"Ogg is a free, open container format maintained by the Xiph.Org Foundation. The creators of the Ogg format state that it is unrestricted by software patents[4] and is designed to provide for efficient streaming and manipulation of high quality digital multimedia."
-    ogg_av.mime_type = u"video/ogg"
-    ogg_av.container = u"ogv"
-    ogg_av.video_codec = u"Theora"
-    ogg_av.audio_codec = u"Vorbis"
+    ogg_av.name = "Ogg Audio/Video"
+    ogg_av.description = "Ogg is a free, open container format maintained by the Xiph.Org Foundation. The creators of the Ogg format state that it is unrestricted by software patents[4] and is designed to provide for efficient streaming and manipulation of high quality digital multimedia."
+    ogg_av.mime_type = "video/ogg"
+    ogg_av.container = "ogv"
+    ogg_av.video_codec = "Theora"
+    ogg_av.audio_codec = "Vorbis"
     ogg_av.encoder = ffmpeg
-    ogg_av.command = u'-ab 128k -c:v libtheora -c:a libvorbis -vb 1000k'
+    ogg_av.command = '-ab 128k -c:v libtheora -c:a libvorbis -vb 1000k'
 
     # supported by chrome, firefox, opera
     ogg_audio = EncodingProfile()
-    ogg_audio.name = u"Ogg Audio"
-    ogg_audio.description = u"Ogg is a free, open container format maintained by the Xiph.Org Foundation. The creators of the Ogg format state that it is unrestricted by software patents[4] and is designed to provide for efficient streaming and manipulation of high quality digital multimedia."
-    ogg_audio.mime_type = u"audio/ogg"
-    ogg_audio.container = u"oga"
-    ogg_audio.audio_codec = u"Vorbis"
+    ogg_audio.name = "Ogg Audio"
+    ogg_audio.description = "Ogg is a free, open container format maintained by the Xiph.Org Foundation. The creators of the Ogg format state that it is unrestricted by software patents[4] and is designed to provide for efficient streaming and manipulation of high quality digital multimedia."
+    ogg_audio.mime_type = "audio/ogg"
+    ogg_audio.container = "oga"
+    ogg_audio.audio_codec = "Vorbis"
     ogg_audio.encoder = ffmpeg
     # see http://pastebin.com/TwQZkeVf
-    ogg_audio.command = u'-f ogg -vn -sn -c:a libvorbis'
+    ogg_audio.command = '-f ogg -vn -sn -c:a libvorbis'
 
     png_image = EncodingProfile()
-    png_image.name = u"PNG"
-    png_image.description = u"Portable Network Graphics (PNG) is  is a bitmapped image format that employs lossless data compression. PNG was created to improve upon and replace GIF (Graphics Interchange Format) as an image-file format not requiring a patent license."
-    png_image.mime_type = u"image/png"
-    png_image.container = u"png"
+    png_image.name = "PNG"
+    png_image.description = "Portable Network Graphics (PNG) is  is a bitmapped image format that employs lossless data compression. PNG was created to improve upon and replace GIF (Graphics Interchange Format) as an image-file format not requiring a patent license."
+    png_image.mime_type = "image/png"
+    png_image.container = "png"
     png_image.encoder = convert
-    png_image.command = u'"{input}" -size 320x240 "{output}"'
+    png_image.command = '"{input}" -size 320x240 "{output}"'
 
     # supported by chrome, ie, Safari on iOS
     mp3_audio = EncodingProfile()
-    mp3_audio.name = u"MP3 Audio"
-    mp3_audio.description = u"MP3, is a patented encoding format for digital audio which uses a form of lossy data compression. It is a common audio format for consumer audio storage, as well as a de facto standard of digital audio compression for the transfer and playback of music on most digital audio players."
-    mp3_audio.mime_type = u"audio/mpeg"
-    mp3_audio.container = u"mp3"
-    mp3_audio.audio_codec = u"MP3"
+    mp3_audio.name = "MP3 Audio"
+    mp3_audio.description = "MP3, is a patented encoding format for digital audio which uses a form of lossy data compression. It is a common audio format for consumer audio storage, as well as a de facto standard of digital audio compression for the transfer and playback of music on most digital audio players."
+    mp3_audio.mime_type = "audio/mpeg"
+    mp3_audio.container = "mp3"
+    mp3_audio.audio_codec = "MP3"
     mp3_audio.encoder = ffmpeg
     # see https://ffmpeg.org/trac/ffmpeg/wiki/Encoding%20VBR%20%28Variable%20Bit%20Rate%29%20mp3%20audio
-    mp3_audio.command = u'-q:a 2'
+    mp3_audio.command = '-q:a 2'
 
     return [flash_video, flash_video2, mp4, webm_av, webm_audio, ogg_av,
             ogg_audio, png_image, mp3_audio]

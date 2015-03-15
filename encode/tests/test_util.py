@@ -63,7 +63,7 @@ class GetMediaUploadToTestCase(WebTest):
         Passing an object instance with a filename returns a pathname.
         """
         result = util.get_media_upload_to(object(), 'foo.png')
-        self.assertEqual(result, u'encode_test/files/foo.png')
+        self.assertEqual(result, 'encode_test/files/foo.png')
 
     def test_instance(self):
         """
@@ -74,7 +74,7 @@ class GetMediaUploadToTestCase(WebTest):
             file_type = VIDEO
 
         result = util.get_media_upload_to(DummyFile(), 'foo.mp4')
-        self.assertEqual(result, u'encode_test/video/foo.mp4')
+        self.assertEqual(result, 'encode_test/video/foo.mp4')
 
 
 class ParseMediaTestCase(WebTest):
@@ -182,7 +182,7 @@ class TemporaryMediaFileTestCase(helpers.FileTestCase, helpers.DummyDataMixin):
         Encoding a file with a non-existing encoding profile raises a
         :py:class:`encode.EncodeError`.
         """
-        unknown_profiles = [u'bad']
+        unknown_profiles = ['bad']
         self.assertRaises(EncodeError, self._tempFile, 'bad_', models.Snapshot,
             unknown_profiles, helpers.PNG_DATA)
 
