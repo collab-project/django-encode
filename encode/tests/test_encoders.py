@@ -68,8 +68,8 @@ class BasicEncoderTestCase(WebTest, DummyDataMixin):
         with self.assertRaises(EncodeError) as cm:
             encoder.start()
 
-        self.assertEqual(str(cm.exception),
-            '{}: [Errno 2] No such file or directory'.format(self.enc.path))
+        self.assertTrue(str(cm.exception).startswith(
+            '{}: [Errno 2] No such file or directory'.format(self.enc.path)))
 
         self.assertEqual(cm.exception.command,
             "{} foo bar".format(self.enc.path))
