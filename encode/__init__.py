@@ -20,12 +20,14 @@ FILE_TYPES = (
 #: Application version.
 __version__ = (1, 0, 0, 'rc1')
 
+
 def short_version(version=None):
     """
     Return short application version. For example: `1.0.0`.
     """
     v = version or __version__
     return '.'.join([str(x) for x in v[:3]])
+
 
 def get_version(version=None):
     """
@@ -40,8 +42,10 @@ def get_version(version=None):
 
     return short_version(v)
 
+
 #: Full version number.
 version = get_version()
+
 
 class EncodeError(Exception):
     """

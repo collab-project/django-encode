@@ -14,8 +14,7 @@ from django_webtest import WebTest
 from encode.conf import settings
 from encode.tests import helpers
 
-from encode import (models, util, DecodeError, VIDEO, EncodeError, get_version,
-    short_version)
+from encode import models, util, DecodeError, VIDEO, EncodeError, get_version
 
 
 class GetRandomFileNameTestCase(WebTest):

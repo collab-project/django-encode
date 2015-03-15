@@ -35,7 +35,7 @@ class WidgetTestCase(FileTestCase, DummyDataMixin):
         widget = MediaDisplayWidget()
 
         self.assertIn(
-        	'<select multiple="multiple" id="id_color" name="test">\n</select>',
+            '<select multiple="multiple" id="id_color" name="test">\n</select>',
             widget.render(
                 name='test',
                 value=[1, 2],
@@ -66,11 +66,10 @@ class WidgetTestCase(FileTestCase, DummyDataMixin):
 
         self.assertIn(
             '<select multiple="multiple" name="test">\n<option value="1" selected="selected">{}</option>\n<option value="2">{}</option>\n</select>'.format(
-            	files[0].title, files[1].title),
+                files[0].title, files[1].title),
             widget.render(
                 name='test',
                 value=[files[0].id],
                 choices=choices
             )
         )
-

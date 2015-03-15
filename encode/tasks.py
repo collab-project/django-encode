@@ -148,5 +148,5 @@ class StoreMedia(Task):
         })
 
         # remove the original input file
-        if media.keep_input_file == False:
+        if media.keep_input_file is False:
             media.remove_file(profile)
