@@ -43,7 +43,7 @@ setup(
     description='Django media encoding.',
     long_description=README,
     classifiers=[
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production/Stable',
         'Framework :: Django',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
@@ -51,6 +51,8 @@ setup(
         'Topic :: Software Development',
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.4',
     ],
     author='Collab',
     author_email='info@collab.nl',
