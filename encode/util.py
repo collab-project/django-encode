@@ -8,6 +8,7 @@ from __future__ import unicode_literals
 
 import os
 import logging
+import binascii
 from base64 import b64decode
 from tempfile import NamedTemporaryFile
 
@@ -97,8 +98,8 @@ def parseMedia(data):
     :type data: str
     :rtype: str
     """
-    #logger.debug("Got frame data: %s" % str(len(img)))
-    #logger.debug("Data URI header: %s" % img[0:40])
+    #logger.debug("Got frame data: %s" % str(len(data)))
+    #logger.debug("Data URI header: %s" % data[0:40])
     header_len = data.find(",")
     payload = data[header_len + 1:]
 
@@ -107,7 +108,7 @@ def parseMedia(data):
         #logger.debug("Binary id: %s" % binary[0:4])
         return binary
 
-    except TypeError:
+    except (TypeError, binascii.Error):
         # corrupt media
         raise DecodeError("Corrupt media")
 

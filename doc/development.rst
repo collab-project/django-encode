@@ -1,6 +1,11 @@
 Development
 ===========
 
+After checkout, install package in active virtualenv::
+
+  $ pip install -e .
+
+
 Testing
 -------
 
