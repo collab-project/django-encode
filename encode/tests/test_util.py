@@ -8,7 +8,6 @@ Tests for the :py:mod:`encode.util` module.
 from __future__ import unicode_literals
 
 import os
-from io import BytesIO
 
 from django_webtest import WebTest
 
@@ -134,23 +133,6 @@ class TemporaryMediaFileTestCase(helpers.FileTestCase, helpers.DummyDataMixin):
         helpers.DummyDataMixin.setUp(self)
         helpers.FileTestCase.setUp(self)
 
-        self.inputFileField = "input_file"
-
-    def _tempFile(self, prefix, model, profiles, data):
-        """
-        Create :py:class:`TemporaryMediaFile`.
-        """
-        tempFile = util.TemporaryMediaFile(
-            prefix=prefix,
-            model=model,
-            inputFileField=self.inputFileField,
-            profiles=profiles
-        )
-        fileData = BytesIO(util.parseMedia(data))
-        result = tempFile.save(fileData)
-
-        return result
-
     def assertFiles(self, result, expected=[]):
         """
         Verify the input file's gone and the expected number of output
@@ -173,7 +155,7 @@ class TemporaryMediaFileTestCase(helpers.FileTestCase, helpers.DummyDataMixin):
         """
         Encoding a file with a single profile results in one output file.
         """
-        result = self._tempFile('img_', models.Snapshot,
+        result = self.createTempFile('img_', models.Snapshot,
             settings.ENCODE_IMAGE_PROFILES,
             helpers.PNG_DATA)
 
@@ -185,7 +167,7 @@ class TemporaryMediaFileTestCase(helpers.FileTestCase, helpers.DummyDataMixin):
         :py:class:`encode.EncodeError`.
         """
         unknown_profiles = ['bad']
-        self.assertRaises(EncodeError, self._tempFile, 'bad_', models.Snapshot,
+        self.assertRaises(EncodeError, self.createTempFile, 'bad_', models.Snapshot,
             unknown_profiles, helpers.PNG_DATA)
 
     def test_multipleProfiles(self):
@@ -193,7 +175,7 @@ class TemporaryMediaFileTestCase(helpers.FileTestCase, helpers.DummyDataMixin):
         Encoding a file with multiple profiles results in multiple output
         files.
         """
-        result = self._tempFile('video_', models.Video,
+        result = self.createTempFile('video_', models.Video,
             settings.ENCODE_VIDEO_PROFILES,
             helpers.WEBM_DATA)
 

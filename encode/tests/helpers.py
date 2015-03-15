@@ -7,6 +7,7 @@ Utilities and test data.
 from __future__ import unicode_literals
 
 import shutil
+from io import BytesIO
 
 from django.conf import settings
 from django.db.utils import IntegrityError
@@ -166,11 +167,29 @@ class FileTestCase(WebTest):
     def setUp(self):
         WebTest.setUp(self)
 
+        self.inputFileField = "input_file"
+
     def tearDown(self):
         WebTest.tearDown(self)
 
         # remove content of MEDIA_ROOT recursively
         shutil.rmtree(settings.MEDIA_ROOT, ignore_errors=True)
+
+    def createTempFile(self, prefix, model, profiles, data):
+        """
+        Create :py:class:`encode.util.TemporaryMediaFile`.
+        """
+        from encode.util import parseMedia, TemporaryMediaFile
+        tempFile = TemporaryMediaFile(
+            prefix=prefix,
+            model=model,
+            inputFileField=self.inputFileField,
+            profiles=profiles
+        )
+        fileData = BytesIO(parseMedia(data))
+        result = tempFile.save(fileData)
+
+        return result
 
 
 #: base64-encoded string of some PNG image data
