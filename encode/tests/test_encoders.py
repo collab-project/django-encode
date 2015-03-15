@@ -5,6 +5,8 @@
 Tests for the :py:mod:`encode.encoders` module.
 """
 
+from __future__ import unicode_literals
+
 from django.core.exceptions import ImproperlyConfigured
 
 from django_webtest import WebTest

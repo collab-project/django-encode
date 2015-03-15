@@ -4,6 +4,8 @@
 Custom test runner.
 """
 
+from __future__ import unicode_literals
+
 import shutil
 import logging
 

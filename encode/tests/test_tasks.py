@@ -5,6 +5,8 @@
 Tests for the :py:mod:`encode.tasks` module.
 """
 
+from __future__ import unicode_literals
+
 from django_webtest import WebTest
 
 from encode import models, tasks, EncodeError, UploadError

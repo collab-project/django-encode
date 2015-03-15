@@ -5,6 +5,8 @@
 Tests for the :py:mod:`encode.util` module.
 """
 
+from __future__ import unicode_literals
+
 import os
 from io import BytesIO
 

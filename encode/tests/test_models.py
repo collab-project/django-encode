@@ -4,6 +4,8 @@
 Tests for the :py:mod:`encode.models` module.
 """
 
+from __future__ import unicode_literals
+
 from django.core.files.base import ContentFile
 
 from encode.models import Audio, Video, EncodingProfile

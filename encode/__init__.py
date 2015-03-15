@@ -4,6 +4,8 @@
 `django-encode` application.
 """
 
+from __future__ import unicode_literals
+
 AUDIO = "audio"
 VIDEO = "video"
 SNAPSHOT = "snapshot"

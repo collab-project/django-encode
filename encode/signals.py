@@ -4,6 +4,8 @@
 Signals.
 """
 
+from __future__ import unicode_literals
+
 import logging
 
 from django.core.files.base import File

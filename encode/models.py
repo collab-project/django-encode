@@ -4,7 +4,7 @@
 Models.
 """
 
-
+from __future__ import unicode_literals
 
 import os
 import shlex
@@ -16,6 +16,7 @@ from django.db.models.signals import pre_save
 from django.core.files.base import File as DjangoFile
 from django.core.files.storage import get_storage_class
 from django.utils.translation import ugettext_lazy as _
+from django.utils.encoding import python_2_unicode_compatible
 
 from django.contrib.auth.models import User
 
@@ -43,6 +44,7 @@ queuedStorage = QueuedStorage(
     delayed=True)
 
 
+@python_2_unicode_compatible
 class MediaFile(models.Model):
     """
     Model for media files.
@@ -76,10 +78,11 @@ class MediaFile(models.Model):
         verbose_name = _('Media file')
         verbose_name_plural = _('Media files')
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title or os.path.basename(self.file.name)
 
 
+@python_2_unicode_compatible
 class Encoder(models.Model):
     """
     Encoder model for tool like FFmpeg or ImageMagick.
@@ -168,10 +171,11 @@ class Encoder(models.Model):
         verbose_name = _('Encoder')
         verbose_name_plural = _('Encoders')
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 
+@python_2_unicode_compatible
 class EncodingProfile(models.Model):
     """
     Job data for encoding a file.
@@ -260,10 +264,11 @@ class EncodingProfile(models.Model):
         verbose_name = _('Encoding profile')
         verbose_name_plural = _('Encoding profiles')
 
-    def __unicode__(self):
-        return str(self.name)
+    def __str__(self):
+        return self.name
 
 
+@python_2_unicode_compatible
 class MediaBase(models.Model):
     """
     Base model for media objects.
@@ -567,8 +572,8 @@ class MediaBase(models.Model):
         verbose_name = _("Media File")
         verbose_name_plural = _("Media Files")
 
-    def __unicode__(self):
-        return str(self.title)
+    def __str__(self):
+        return self.title
 
 
 class Video(MediaBase):

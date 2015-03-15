@@ -4,7 +4,7 @@
 Tasks.
 """
 
-
+from __future__ import unicode_literals
 
 from celery import Task
 from celery.utils.log import get_task_logger

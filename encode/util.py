@@ -4,6 +4,8 @@
 Utilities.
 """
 
+from __future__ import unicode_literals
+
 import os
 import logging
 from base64 import b64decode

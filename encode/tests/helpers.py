@@ -4,6 +4,8 @@
 Utilities and test data.
 """
 
+from __future__ import unicode_literals
+
 import shutil
 
 from django.conf import settings
