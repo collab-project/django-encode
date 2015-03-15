@@ -18,7 +18,7 @@ FILE_TYPES = (
 )
 
 #: Application version.
-__version__ = (1, 0, 0, 'rc1')
+__version__ = (1, 0, 0, 'rc2')
 
 
 def short_version(version=None):
