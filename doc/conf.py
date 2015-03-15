@@ -55,7 +55,7 @@ copyright = u'2012-{0}, Collab'.format(datetime.now().year)
 from encode import short_version, version as release_version
 
 # The short X.Y.Z version.
-version = short_version
+version = short_version()
 
 # The full version, including alpha/beta/rc tags.
 release = release_version

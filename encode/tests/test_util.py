@@ -12,7 +12,9 @@ from django_webtest import WebTest
 
 from encode.conf import settings
 from encode.tests import helpers
-from encode import models, util, DecodeError, VIDEO, EncodeError
+
+from encode import (models, util, DecodeError, VIDEO, EncodeError, get_version,
+    short_version)
 
 
 class GetRandomFileNameTestCase(WebTest):
@@ -99,6 +101,27 @@ class ParseMediaTestCase(WebTest):
         :py:class:`~encode.DecodeError`.
         """
         self.assertRaises(DecodeError, util.parseMedia, 'foo')
+
+
+class VersionTestCase(WebTest):
+    """
+    Tests for :py:mod:`~encode` versioning information.
+    """
+    def test_regularVersion(self):
+        """
+        :py:func:`~encode.get_version` returns a string version without
+        any beta tags, eg. `1.0.1`.
+        """
+        version = (1, 0, 1)
+        self.assertEqual(get_version(version), '1.0.1')
+
+    def test_betaVersion(self):
+        """
+        :py:func:`~encode.get_version` returns a string version with beta tags,
+        eg. `1.2.3b1`.
+        """
+        version = (1, 2, 3, 'b1')
+        self.assertEqual(get_version(version), '1.2.3b1')
 
 
 class TemporaryMediaFileTestCase(helpers.FileTestCase, helpers.DummyDataMixin):
