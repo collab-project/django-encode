@@ -97,10 +97,13 @@ class ParseMediaTestCase(WebTest):
 
     def test_badData(self):
         """
-        Passing corrupt data to `parseMedia` raises a
+        Passing corrupt or unsupported data to `parseMedia` raises a
         :py:class:`~encode.DecodeError`.
         """
         self.assertRaises(DecodeError, util.parseMedia, 'foo')
+        self.assertRaises(DecodeError, util.parseMedia, {})
+        self.assertRaises(DecodeError, util.parseMedia, [])
+        self.assertRaises(DecodeError, util.parseMedia, ())
 
 
 class VersionTestCase(WebTest):

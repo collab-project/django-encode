@@ -100,15 +100,16 @@ def parseMedia(data):
     """
     #logger.debug("Got frame data: %s" % str(len(data)))
     #logger.debug("Data URI header: %s" % data[0:40])
-    header_len = data.find(",")
-    payload = data[header_len + 1:]
 
     try:
+        header_len = data.find(",")
+        payload = data[header_len + 1:]
         binary = b64decode(payload)
         #logger.debug("Binary id: %s" % binary[0:4])
+
         return binary
 
-    except (TypeError, binascii.Error):
+    except (AttributeError, TypeError, binascii.Error):
         # corrupt media
         raise DecodeError("Corrupt media")
 
