@@ -53,7 +53,7 @@
                                     hideScrollbar: true
                                 },
                                 persistvolume: {
-                                    namespace: 'collab_admin'
+                                    namespace: 'encode'
                                 }
                             }
                         });
@@ -84,7 +84,7 @@
                             height: 240,
                             plugins: {
                                 persistvolume: {
-                                    namespace: 'collab_admin'
+                                    namespace: 'encode'
                                 }
                             }
                         });
