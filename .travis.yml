@@ -3,14 +3,18 @@ python:
   - "2.7"
   - "3.4"
 sudo: required
+cache: pip
 install:
   - "pip install -r requirements/production.txt"
   - "pip install -r requirements/testing.txt"
   - "pip install ."
 before_script:
-  - sudo add-apt-repository ppa:jon-severinsson/ffmpeg -y
-  - sudo apt-get update -q
-  - sudo apt-get install imagemagick ffmpeg
+  - wget -q http://johnvansickle.com/ffmpeg/builds/ffmpeg-git-64bit-static.tar.xz
+  - tar xf ffmpeg-git-64bit-static.tar.xz
+  - cd ffmpeg-*
+  - sudo mv ff* /usr/bin/
+  - ffmpeg -version
+  - convert --version
 script:
   - if [[ $TRAVIS_PYTHON_VERSION == '2.7' ]]; then tox -e py27,coverage; fi
   - if [[ $TRAVIS_PYTHON_VERSION == '3.4' ]]; then tox -e py34; fi
