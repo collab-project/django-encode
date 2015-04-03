@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright Collab 2012-2014.
+# Copyright Collab 2012-2015.
 #
 # Documentation build configuration file for encode project.
 #
