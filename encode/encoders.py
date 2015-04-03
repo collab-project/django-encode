@@ -11,7 +11,10 @@ import shlex
 import logging
 import subprocess
 
-from django.utils.module_loading import import_by_path
+try:
+    from django.utils.module_loading import import_string
+except ImportError:
+    from django.utils.module_loading import import_by_path as import_string
 
 from converter.ffmpeg import FFMpeg, FFMpegError, FFMpegConvertError
 
@@ -37,7 +40,7 @@ def get_encoder_class(import_path=None):
     :returns: The encoder class.
     :rtype: class
     """
-    return import_by_path(import_path or settings.ENCODE_DEFAULT_ENCODER_CLASS)
+    return import_string(import_path or settings.ENCODE_DEFAULT_ENCODER_CLASS)
 
 
 class BaseEncoder(object):

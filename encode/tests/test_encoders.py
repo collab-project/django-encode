@@ -40,8 +40,14 @@ class GetEncoderClassTestCase(WebTest):
         """
         Retrieving a non-existing class raises an exception.
         """
-        self.assertRaises(ImproperlyConfigured, encoders.get_encoder_class,
-            'does.not.Exist')
+        module_path = 'does.not.Exist'
+        try:
+            # django >= 1.7
+            from django.utils.module_loading import import_string
+            exception = ImportError
+        except:
+            exception = ImproperlyConfigured
+        self.assertRaises(exception, encoders.get_encoder_class, module_path)
 
 
 class BasicEncoderTestCase(WebTest, DummyDataMixin):
