@@ -8,6 +8,7 @@ dist
 build
 .coverage
 *.pid
+.DS_Store
 doc/_build
 htmlcov/
 .tox/
