@@ -1,5 +1,5 @@
 django
 celery>=3.1
 django-appconf>=0.6
-https://github.com/jezdez/django-queued-storage/archive/develop.zip
-https://github.com/thijstriemstra/python-video-converter/archive/master.zip
+-e git+https://github.com/jezdez/django-queued-storage.git#egg=django-queued-storage
+-e git+https://github.com/thijstriemstra/python-video-converter.git#egg=python-video-converter
