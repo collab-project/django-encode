@@ -41,9 +41,11 @@ class GetEncoderClassTestCase(WebTest):
         Retrieving a non-existing class raises an exception.
         """
         module_path = 'does.not.Exist'
+        # find correct exception
         try:
             # django >= 1.7
             from django.utils.module_loading import import_string
+            del import_string
             exception = ImportError
         except:
             exception = ImproperlyConfigured
