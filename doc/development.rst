@@ -1,8 +1,11 @@
 Development
 ===========
 
-After checkout, install package in active virtualenv::
+After checkout, install dependencies and package in active virtualenv::
 
+  $ pip install -r requirements/development.txt
+  $ pip install -r requirements/testing.txt
+  $ pip install -r requirements/production.txt
   $ pip install -e .
 
 
