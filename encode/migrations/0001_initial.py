@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.db import migrations, models
 import queued_storage.fields
-import queued_storage.backends
+import encode.storage
 import encode.util
 from django.conf import settings
 import django.core.files.storage
@@ -61,7 +61,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('title', models.CharField(help_text='Title for this object.', max_length=255, verbose_name='Title')),
                 ('file_type', models.CharField(max_length=255, verbose_name='File type', choices=[('audio', 'Audio'), ('video', 'Video'), ('snapshot', 'Snapshot')])),
-                ('input_file', queued_storage.fields.QueuedFileField(storage=queued_storage.backends.QueuedStorage(local=b'django.core.files.storage.FileSystemStorage', remote_options={b'location': b'/Users/triplanbvtriemstra/Sites/projects/django-encode/media/remote'}, remote=b'django.core.files.storage.FileSystemStorage', local_options={b'location': b'/Users/triplanbvtriemstra/Sites/projects/django-encode/media'}, delayed=True), upload_to=encode.util.get_media_upload_to, blank=True, help_text='The uploaded source file.', null=True, verbose_name='Input file')),
+                ('input_file', queued_storage.fields.QueuedFileField(storage=encode.storage.QueuedEncodeSystemStorage(), upload_to=encode.util.get_media_upload_to, blank=True, help_text='The uploaded source file.', null=True, verbose_name='Input file')),
                 ('uploaded', models.BooleanField(default=False, help_text='Indicates that the output file(s) have been uploaded.', verbose_name='Uploaded', editable=False)),
                 ('encoded', models.BooleanField(default=False, help_text='Indicates that the input file has finished encoding.', verbose_name='Encoded', editable=False)),
                 ('encoding', models.BooleanField(default=False, help_text='Indicates that the input file is currently encoding.', verbose_name='Encoding', editable=False)),

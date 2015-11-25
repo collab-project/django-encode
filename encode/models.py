@@ -21,10 +21,10 @@ from django.utils.encoding import python_2_unicode_compatible
 from django.contrib.auth.models import User
 
 from queued_storage.fields import QueuedFileField
-from queued_storage.backends import QueuedStorage
 
 from encode.conf import settings
 from encode.signals import check_file_changed
+from encode.storage import QueuedEncodeSystemStorage
 from encode import UploadError, FILE_TYPES, VIDEO, AUDIO, SNAPSHOT
 from encode.util import get_random_filename, get_media_upload_to, short_path
 
@@ -36,12 +36,6 @@ logger = logging.getLogger(__name__)
 
 # storages
 cdnStorage = get_storage_class(settings.ENCODE_CDN_FILE_STORAGE)()
-queuedStorage = QueuedStorage(
-    local=settings.ENCODE_LOCAL_FILE_STORAGE,
-    remote=settings.ENCODE_REMOTE_FILE_STORAGE,
-    local_options=settings.ENCODE_LOCAL_STORAGE_OPTIONS,
-    remote_options=settings.ENCODE_REMOTE_STORAGE_OPTIONS,
-    delayed=True)
 
 
 @python_2_unicode_compatible
@@ -291,7 +285,7 @@ class MediaBase(models.Model):
         # False), then self.input_file will *not* be deleted from the
         # webserver serving the Django application.
         upload_to=get_media_upload_to,
-        storage=queuedStorage,
+        storage=QueuedEncodeSystemStorage(),
         help_text=_("The uploaded source file."),
         null=True,
         blank=True,
