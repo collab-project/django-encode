@@ -326,14 +326,12 @@ class MediaBase(models.Model):
     # related fields
     profiles = models.ManyToManyField(
         EncodingProfile,
-        null=True,
         help_text=_('The encoding profile(s).'),
         related_name='encoding_profiles',
         verbose_name=_('Encoding profiles'),
     )
     output_files = models.ManyToManyField(
         MediaFile,
-        null=True,
         blank=True,
         help_text=_('The encoded output file(s). Stored in CDN.'),
         related_name='encoding_profiles',
