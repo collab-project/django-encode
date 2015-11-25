@@ -16,5 +16,5 @@ before_script:
   - ffmpeg -version
   - convert --version
 script:
-  - if [[ $TRAVIS_PYTHON_VERSION == '2.7' ]]; then tox -e py27,coverage; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == '2.7' ]]; then tox -e py27,coveralls; fi
   - if [[ $TRAVIS_PYTHON_VERSION == '3.4' ]]; then tox -e py34; fi
