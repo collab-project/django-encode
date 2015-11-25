@@ -1,4 +1,4 @@
 tox
-coverage
+coverage==3.6
 WebTest
 django-webtest
