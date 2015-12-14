@@ -5,11 +5,11 @@ URLConf for :py:mod:`encode` tests.
 """
 
 from django.contrib import admin
-from django.conf.urls import patterns, include, url
+from django.conf.urls import include, url
 
 
 admin.autodiscover()
 
-urlpatterns = patterns('',
+urlpatterns = [
     url(r'^', include(admin.site.urls)),
-)
+]
