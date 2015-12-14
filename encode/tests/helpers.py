@@ -9,10 +9,14 @@ from __future__ import unicode_literals
 import shutil
 from io import BytesIO
 
+from django import VERSION
 from django.conf import settings
 from django.db.utils import IntegrityError
 
 from django_webtest import WebTest
+
+
+DJANGO_19_AND_NEWER = VERSION[0] > 1 or (VERSION[0] == 1 and VERSION[1] >= 9)
 
 
 def encoders():

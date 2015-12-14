@@ -17,7 +17,8 @@ from django_webtest import WebTest
 
 from encode import admin, models
 from encode.util import get_random_filename, parseMedia
-from encode.tests.helpers import PNG_DATA, DummyDataMixin, FileTestCase
+from encode.tests.helpers import (PNG_DATA, DJANGO_19_AND_NEWER,
+    DummyDataMixin, FileTestCase)
 
 
 class MockRequest(object):
@@ -101,9 +102,14 @@ class EncodingProfileAdminTests(WebTest):
             'encoder'))
 
     def test_encoder_link(self):
-        self.assertHTMLEqual(self.ma.encoder_link(self.profile),
-            "<b><a href='/encode/encoder/{}/'>{}</a></b>".format(
-            self.profile.id, self.profile.encoder.name))
+        result = "<b><a href='/encode/encoder/{}/".format(self.profile.id)
+
+        if DJANGO_19_AND_NEWER:
+            result += 'change/'
+
+        result += "'>{}</a></b>".format(self.profile.encoder.name)
+
+        self.assertHTMLEqual(self.ma.encoder_link(self.profile), result)
 
 
 class MediaAdminTests(FileTestCase, DummyDataMixin):
