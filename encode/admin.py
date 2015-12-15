@@ -6,6 +6,7 @@ Admin functionality.
 
 from __future__ import unicode_literals
 
+from django.utils.html import format_html
 from django.contrib import admin, messages
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
@@ -46,7 +47,7 @@ class EncodingProfileAdmin(admin.ModelAdmin):
         markup = "<b><a href='{url}'>{name}</a></b>"
         url = reverse('admin:encode_encoder_change', args=(
             obj.encoder.id,))
-        return markup.format(name=obj.encoder.name, url=url)
+        return format_html(markup, name=obj.encoder.name, url=url)
 
     encoder_link.short_description = _('Encoder')
     encoder_link.allow_tags = True
