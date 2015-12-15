@@ -12,6 +12,7 @@ django-encode
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg
     :target: https://raw.githubusercontent.com/collab-project/django-encode/master/LICENSE
 
+
 Installation
 ------------
 
@@ -22,6 +23,13 @@ Use pip_ to install the download and install the package from PyPi_::
 Or checkout the source code from Github_::
 
   git clone https://github.com/collab-project/django-encode.git
+  cd django-encode
+  pip install -e .
+
+The dependency ``python-video-converter`` is not available on PyPi and needs to be installed
+manually::
+
+  pip install -e git+https://github.com/thijstriemstra/python-video-converter.git#egg=python-video-converter
 
 
 Documentation

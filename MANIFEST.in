@@ -1,6 +1,6 @@
 include README.rst LICENSE tox.ini .coveragerc runtests.py
 
-recursive-include requirements *
+recursive-include encode/tests *.txt
 recursive-include encode/locale *
 recursive-include encode/static *
 

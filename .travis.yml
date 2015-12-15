@@ -4,11 +4,7 @@ python:
   - "3.4"
 sudo: required
 cache: pip
-install:
-  - "pip install --upgrade pip"
-  - "pip install -r requirements/production.txt"
-  - "pip install -r requirements/testing.txt"
-  - "pip install ."
+install: pip install --upgrade pip tox coveralls
 before_script:
   - wget -q http://johnvansickle.com/ffmpeg/builds/ffmpeg-git-64bit-static.tar.xz
   - tar -xf ffmpeg-*.tar.xz -v

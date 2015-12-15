@@ -3,10 +3,9 @@ Development
 
 After checkout, install dependencies and package in active virtualenv::
 
-  $ pip install -r requirements/development.txt
-  $ pip install -r requirements/testing.txt
-  $ pip install -r requirements/production.txt
+  $ pip -e git+https://github.com/thijstriemstra/python-video-converter.git#egg=python-video-converter
   $ pip install -e .
+  $ pip install -r encode/tests/requirements.txt
 
 
 Testing
@@ -24,7 +23,7 @@ Running tests without Tox_::
 
   $ ./runtests.py
 
-Directly with `django-admin`::
+Directly with ``django-admin``::
 
   $ django-admin test --settings=encode.tests.settings encode
 
@@ -51,6 +50,20 @@ After translating, compile the ``django.po`` catalog into the binary
 version `django.mo`::
 
   $ django-admin compilemessages --settings=encode.tests.settings
+
+
+Documentation
+-------------
+
+Install Sphinx::
+
+  $ pip install sphinx>=1.1.0
+
+Change to the ``doc`` directory and run::
+
+  $ make html
+
+The resulting HTML output can be found in the ``doc/_build/html`` directory.
 
 
 .. _Tox: http://tox.testrun.org/
