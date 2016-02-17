@@ -1,16 +1,20 @@
 language: python
-python:
-  - "2.7"
-  - "3.4"
 sudo: required
-cache: pip
-install: pip install --upgrade pip tox coveralls
+cache:
+  directories:
+  - $HOME/.cache/pip
+install: pip install --upgrade pip tox wheel
 before_script:
   - wget -q http://johnvansickle.com/ffmpeg/builds/ffmpeg-git-64bit-static.tar.xz
   - tar -xf ffmpeg-*.tar.xz -v
   - sudo mv ffmpeg*/ff* /usr/bin/
   - ffmpeg -version
   - convert --version
-script:
-  - if [[ $TRAVIS_PYTHON_VERSION == '2.7' ]]; then tox -e py27,coveralls; fi
-  - if [[ $TRAVIS_PYTHON_VERSION == '3.4' ]]; then tox -e py34; fi
+script: tox
+env:
+  - TOXENV=py27-django-17
+  - TOXENV=py27-django-18
+  - TOXENV=py27-django-19
+  - TOXENV=py34-django-18
+  - TOXENV=py34-django-19
+  - TOXENV=coveralls
