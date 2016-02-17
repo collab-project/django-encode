@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: encode\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-25 10:53-0600\n"
+"POT-Creation-Date: 2016-02-17 17:02-0600\n"
 "PO-Revision-Date: 2015-03-17 22:18+0100\n"
 "Last-Translator: Thijs Triemstra <info@collab.nl>\n"
 "Language-Team: Collab <info@collab.nl>\n"
@@ -18,161 +18,161 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.7.5\n"
 
-#: encode/admin.py:51 encode/models.py:165
+#: encode/admin.py:53 encode/models.py:166
 msgid "Encoder"
 msgstr ""
 
-#: encode/admin.py:78
+#: encode/admin.py:80
 msgid "The file is being encoded."
 msgstr "Het bestand word geëncodeerd."
 
-#: encode/models.py:47 encode/models.py:271
+#: encode/models.py:48 encode/models.py:272
 msgid "Title"
 msgstr "Titel"
 
-#: encode/models.py:48
+#: encode/models.py:49
 msgid "Title for this file."
 msgstr "Titel voor dit bestand."
 
-#: encode/models.py:54
+#: encode/models.py:55
 msgid "File for this model."
 msgstr "Bestand voor dit model."
 
-#: encode/models.py:61 encode/models.py:140 encode/models.py:234
-#: encode/models.py:341
+#: encode/models.py:62 encode/models.py:141 encode/models.py:235
+#: encode/models.py:342
 msgid "Created at"
 msgstr "Aangemaakt op"
 
-#: encode/models.py:62
+#: encode/models.py:63
 msgid "The date and time the file was created."
 msgstr "Datum en tijd waarop dit bestand is aangemaakt."
 
-#: encode/models.py:66 encode/models.py:145 encode/models.py:239
-#: encode/models.py:346
+#: encode/models.py:67 encode/models.py:146 encode/models.py:240
+#: encode/models.py:347
 msgid "Modified at"
 msgstr "Gewijzigd op"
 
-#: encode/models.py:67
+#: encode/models.py:68
 msgid "The date and time the file was last modified."
 msgstr "Datum en tijd waarop het bestand voor het laatst is gewijzigd."
 
-#: encode/models.py:72
+#: encode/models.py:73
 msgid "Media file"
 msgstr "Media bestand"
 
-#: encode/models.py:73
+#: encode/models.py:74
 msgid "Media files"
 msgstr "Media bestanden"
 
-#: encode/models.py:85 encode/models.py:178
+#: encode/models.py:86 encode/models.py:179
 msgid "Name"
 msgstr "Naam"
 
-#: encode/models.py:90
+#: encode/models.py:91
 msgid "Name for this encoder. Example: FFmpeg"
 msgstr "Naam voor deze encoder. Voorbeeld: FFmpeg"
 
-#: encode/models.py:94 encode/models.py:185
+#: encode/models.py:95 encode/models.py:186
 msgid "Description"
 msgstr "Beschrijving"
 
-#: encode/models.py:97
+#: encode/models.py:98
 msgid "Optional description for this encoder."
 msgstr "Optionele beschrijving voor deze encoder."
 
-#: encode/models.py:100
+#: encode/models.py:101
 msgid "Documentation URL"
 msgstr "Documentatie URL"
 
-#: encode/models.py:105
+#: encode/models.py:106
 msgid "URL for the external documentation of this encoder."
 msgstr "URL van de externe documentatie voor deze encoder."
 
-#: encode/models.py:109
+#: encode/models.py:110
 msgid "Path"
 msgstr "Pad"
 
-#: encode/models.py:114
+#: encode/models.py:115
 msgid "Name or path of the encoder executable. Example: /usr/local/bin/ffmpeg"
 msgstr ""
 "Naam of pad van de encoder executable. Voorbeeld:  /usr/local/bin/ffmpeg"
 
-#: encode/models.py:119
+#: encode/models.py:120
 msgid "Class"
 msgstr "Class"
 
-#: encode/models.py:124
+#: encode/models.py:125
 msgid "Optional encoder class to use. Example: encode.encoders.FFMpegEncoder"
 msgstr "Optionele encoder class. Voorbeeld: encode.encoders.FFMpegEncoder"
 
-#: encode/models.py:129 encode/models.py:224
+#: encode/models.py:130 encode/models.py:225
 msgid "Command"
 msgstr "Commando"
 
-#: encode/models.py:134
+#: encode/models.py:135
 msgid ""
 "Optional command options that are always added. Example: -loglevel fatal -y"
 msgstr ""
 "Optionele command opties die altijd worden toegevoegd. Voorbeeld: -loglevel "
 "fatal -y"
 
-#: encode/models.py:141
+#: encode/models.py:142
 msgid "The date and time the encoder was created."
 msgstr "Datum en tijd waarop de encoder is aangemaakt."
 
-#: encode/models.py:146
+#: encode/models.py:147
 msgid "The date and time the encoder was last modified."
 msgstr "Datum en tijd waarop deze encoder voor het laatst is gewijzigd."
 
-#: encode/models.py:166
+#: encode/models.py:167
 msgid "Encoders"
 msgstr ""
 
-#: encode/models.py:181
+#: encode/models.py:182
 msgid "Title for this encoding profile. Example: WebM"
 msgstr "Titel voor dit encoding profiel. Voorbeeld: WebM"
 
-#: encode/models.py:188
+#: encode/models.py:189
 msgid "Optional description for this encoding profile."
 msgstr "Optionele beschrijving voor dit encoding profiel."
 
-#: encode/models.py:191
+#: encode/models.py:192
 msgid "MIME-type"
 msgstr ""
 
-#: encode/models.py:196
+#: encode/models.py:197
 msgid "MIME-type for this encoding profile. Example: video/webm"
 msgstr "MIME-type voor dit encoding profiel. Voorbeeld: video/webm"
 
-#: encode/models.py:200
+#: encode/models.py:201
 msgid "Container"
 msgstr ""
 
-#: encode/models.py:202
+#: encode/models.py:203
 msgid "Media container (file extension). Example: webm"
 msgstr "Media container (bestandsextentie). Voorbeeld: webm"
 
-#: encode/models.py:205
+#: encode/models.py:206
 msgid "Video Codec"
 msgstr ""
 
-#: encode/models.py:209
+#: encode/models.py:210
 msgid "Video codec name. Example: VP8"
 msgstr "Video codec naam. Voorbeeld: VP8"
 
-#: encode/models.py:212
+#: encode/models.py:213
 msgid "Audio Codec"
 msgstr ""
 
-#: encode/models.py:216
+#: encode/models.py:217
 msgid "Audio codec name. Example: Vorbis"
 msgstr "Audio codec naam. Voorbeeld: Vorbis"
 
-#: encode/models.py:221
+#: encode/models.py:222
 msgid "Encoder for this profile."
 msgstr "Encoder voor dit profiel."
 
-#: encode/models.py:227
+#: encode/models.py:228
 #, python-brace-format
 msgid ""
 "The command to execute, excluding the encoder executable's path or name. "
@@ -183,67 +183,67 @@ msgstr ""
 "Ondersteund variabele interpolatie. Voorbeeld: -i \"{input}\" -acodec "
 "libvorbis -ab 128k -vcodec libvpx -s 320x240 \"{output}\""
 
-#: encode/models.py:235
+#: encode/models.py:236
 msgid "The date and time the profile was created."
 msgstr "De datum en tijd waarop het profiel is aangemaakt."
 
-#: encode/models.py:240
+#: encode/models.py:241
 msgid "The date and time the profile was last modified."
 msgstr "De datum en tijd waarop het profiel voor het laatst is aangepast."
 
-#: encode/models.py:258
+#: encode/models.py:259
 msgid "Encoding profile"
 msgstr "Encoding profiel"
 
-#: encode/models.py:259 encode/models.py:325
+#: encode/models.py:260 encode/models.py:326
 msgid "Encoding profiles"
 msgstr "Encoding profielen"
 
-#: encode/models.py:273
+#: encode/models.py:274
 msgid "Title for this object."
 msgstr "Titel voor dit object."
 
-#: encode/models.py:276
+#: encode/models.py:277
 msgid "File type"
 msgstr "Bestand type"
 
-#: encode/models.py:281
+#: encode/models.py:282
 msgid "Input file"
 msgstr "Input bestand"
 
-#: encode/models.py:289
+#: encode/models.py:290
 msgid "The uploaded source file."
 msgstr "Het geuploade source bestand."
 
-#: encode/models.py:294
+#: encode/models.py:295
 msgid "Uploaded"
 msgstr "Geüpload"
 
-#: encode/models.py:298
+#: encode/models.py:299
 msgid "Indicates that the output file(s) have been uploaded."
 msgstr "Geeft aan dat output bestand(en) zijn geüpload."
 
-#: encode/models.py:301
+#: encode/models.py:302
 msgid "Encoded"
 msgstr "Geëncodeerd"
 
-#: encode/models.py:304
+#: encode/models.py:305
 msgid "Indicates that the input file has finished encoding."
 msgstr "Geeft aan dat het input bestand volledig is geëncodeerd."
 
-#: encode/models.py:307
+#: encode/models.py:308
 msgid "Encoding"
 msgstr "Encoding"
 
-#: encode/models.py:310
+#: encode/models.py:311
 msgid "Indicates that the input file is currently encoding."
 msgstr "Geeft aan dat het input bestand momenteel word geëncodeerd."
 
-#: encode/models.py:313
+#: encode/models.py:314
 msgid "Keep input file"
 msgstr "Bewaar input bestand"
 
-#: encode/models.py:316
+#: encode/models.py:317
 msgid ""
 "Indicates that the input file should be saved and not\n"
 "            be removed after it's encoded and uploaded."
@@ -251,58 +251,58 @@ msgstr ""
 "Geeft aan dat het input bestand moet worden bewaard en niet\n"
 "            worden verwijderd nadat het is geëncodeerd en geüpload."
 
-#: encode/models.py:323
+#: encode/models.py:324
 msgid "The encoding profile(s)."
 msgstr "Het encoding profiel(en)"
 
-#: encode/models.py:330
+#: encode/models.py:331
 msgid "The encoded output file(s). Stored in CDN."
 msgstr "De geëncodeerde bestanden. Opgeslagen in CDN."
 
-#: encode/models.py:332
+#: encode/models.py:333
 msgid "Output files"
 msgstr "Output bestanden"
 
-#: encode/models.py:337
+#: encode/models.py:338
 msgid "The user who uploaded the input file."
 msgstr "De gebruiker die het input bestand heeft geupload."
 
-#: encode/models.py:342
+#: encode/models.py:343
 msgid "The date and time the object was created."
 msgstr "De datum en tijd waarop het object is aangemaakt."
 
-#: encode/models.py:347
+#: encode/models.py:348
 msgid "The date and time the object was last modified."
 msgstr "De datum en tijd waarop het object voor het laatst is bewerkt."
 
-#: encode/models.py:564
+#: encode/models.py:565
 msgid "Media File"
 msgstr "Media bestand"
 
-#: encode/models.py:565
+#: encode/models.py:566
 msgid "Media Files"
 msgstr "Media Bestanden"
 
-#: encode/models.py:585
+#: encode/models.py:586
 msgid "Video Clip"
 msgstr ""
 
-#: encode/models.py:586
+#: encode/models.py:587
 msgid "Video Clips"
 msgstr ""
 
-#: encode/models.py:605
+#: encode/models.py:606
 msgid "Audio Clip"
 msgstr ""
 
-#: encode/models.py:606
+#: encode/models.py:607
 msgid "Audio Clips"
 msgstr ""
 
-#: encode/models.py:625
+#: encode/models.py:626
 msgid "Snapshot"
 msgstr ""
 
-#: encode/models.py:626
+#: encode/models.py:627
 msgid "Snapshots"
 msgstr ""
