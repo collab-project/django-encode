@@ -1,4 +1,5 @@
-# Copyright Collab 2012-2015
+# Copyright Collab 2012-2016
+# See LICENSE for details.
 
 """
 Utilities and test data.

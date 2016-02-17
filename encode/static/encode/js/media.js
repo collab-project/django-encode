@@ -1,4 +1,5 @@
-// Copyright Collab 2014-2015
+// Copyright Collab 2014-2016
+// See LICENSE for details.
 
 !function ($)
 {
@@ -57,7 +58,7 @@
                                 }
                             }
                         });
-                        
+
                         // change player background color
                         player.el().style.backgroundColor = "#BDBBBC";
                     }
@@ -73,7 +74,7 @@
                     {
                         markup = '<video id="myVideo' + index + '" class="video-js vjs-default-skin"></video>';
                         players.append(markup);
-                        
+
                         // add video player
                         var player = videojs("myVideo" + index,
                         {

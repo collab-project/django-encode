@@ -1,4 +1,5 @@
-# Copyright Collab 2014-2015
+# Copyright Collab 2014-2016
+# See LICENSE for details.
 
 """
 Widgets.
@@ -29,7 +30,8 @@ class MediaDisplayWidget(forms.SelectMultiple):
                 if option_value in [int(x) for x in value]:
                     try:
                         from encode import models
-                        path = models.MediaFile.objects.get(title=option_label).file.url
+                        path = models.MediaFile.objects.get(
+                            title=option_label).file.url
                         paths.append(path)
                     except models.MediaFile.DoesNotExist:
                         pass

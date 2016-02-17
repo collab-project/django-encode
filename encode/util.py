@@ -1,4 +1,5 @@
-# Copyright Collab 2012-2015
+# Copyright Collab 2012-2016
+# See LICENSE for details.
 
 """
 Utilities.
@@ -98,14 +99,14 @@ def parseMedia(data):
     :type data: str
     :rtype: str
     """
-    #logger.debug("Got frame data: %s" % str(len(data)))
-    #logger.debug("Data URI header: %s" % data[0:40])
+    # logger.debug("Got frame data: %s" % str(len(data)))
+    # logger.debug("Data URI header: %s" % data[0:40])
 
     try:
         header_len = data.find(",")
         payload = data[header_len + 1:]
         binary = b64decode(payload)
-        #logger.debug("Binary id: %s" % binary[0:4])
+        # logger.debug("Binary id: %s" % binary[0:4])
 
         return binary
 

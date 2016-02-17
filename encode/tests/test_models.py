@@ -1,4 +1,5 @@
-# Copyright Collab 2014-2015
+# Copyright Collab 2014-2016
+# See LICENSE for details.
 
 """
 Tests for the :py:mod:`encode.models` module.

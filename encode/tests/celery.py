@@ -1,4 +1,5 @@
-# Copyright Collab 2013-2015
+# Copyright Collab 2013-2016
+# See LICENSE for details.
 
 """
 Celery configuration for the :py:mod:`encode` application.

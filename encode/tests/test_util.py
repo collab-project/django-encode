@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-# Copyright Collab 2013-2015
+# Copyright Collab 2013-2016
+# See LICENSE for details.
 
 """
 Tests for the :py:mod:`encode.util` module.

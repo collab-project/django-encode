@@ -1,4 +1,5 @@
-# Copyright Collab 2014-2015
+# Copyright Collab 2014-2016
+# See LICENSE for details.
 
 """
 URLConf for :py:mod:`encode` tests.

@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-# Copyright Collab 2012-2015
+# Copyright Collab 2012-2016
+# See LICENSE for details.
 
 import os
 import sys
@@ -10,16 +11,15 @@ from setuptools.command.test import test as TestCommand
 README = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
 
 # get version nr
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), 'encode')))
-from encode import version
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__),
+    'encode')))
+from encode import version  # flake8: noqa
 sys.path.pop(0)
 
 
 class Tox(TestCommand):
     """
-    Makes the `python setup.py test` command work.
-
-    See http://testrun.org/tox/latest/example/basic.html#integration-with-setuptools-distribute-test-commands
+    Makes the `python setup.py test` command work with Tox.
     """
     def finalize_options(self):
         TestCommand.finalize_options(self)

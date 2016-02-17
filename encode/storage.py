@@ -1,4 +1,5 @@
-# Copyright Collab 2015
+# Copyright Collab 2015-2016
+# See LICENSE for details.
 
 """
 Storage.
@@ -26,4 +27,3 @@ class QueuedEncodeSystemStorage(QueuedStorage):
             remote_options=remote_options,
             delayed=delayed,
             *args, **kwargs)
-

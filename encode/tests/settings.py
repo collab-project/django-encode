@@ -1,4 +1,5 @@
-# Copyright Collab 2013-2015
+# Copyright Collab 2013-2016
+# See LICENSE for details.
 
 import os
 
@@ -104,7 +105,7 @@ MIDDLEWARE_CLASSES = (
 )
 
 # Logging configuration.
-# See http://docs.djangoproject.com/en/dev/topics/logging for
+# See https://docs.djangoproject.com/en/dev/topics/logging for
 # more details on how to customize your logging configuration.
 
 LOG_HANDLER = 'null'
@@ -118,9 +119,6 @@ LOGGING = {
         }
     },
     'formatters': {
-        'verbose': {
-            'format': '%(asctime)s %(levelname)-6s %(name)-15s - %(process)d %(thread)d %(message)s'
-        },
         'simple': {
             'format': '%(asctime)s %(levelname)-6s %(name)-15s - %(message)s'
         },
