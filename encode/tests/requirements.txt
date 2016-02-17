@@ -2,3 +2,4 @@ tox
 coverage
 WebTest
 django-webtest
+flake8
