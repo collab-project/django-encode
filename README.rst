@@ -5,6 +5,8 @@ django-encode
 
 .. image:: https://img.shields.io/pypi/v/django-encode.svg
     :target: https://pypi.python.org/pypi/django-encode
+.. image:: https://img.shields.io/pypi/pyversions/django-encode.svg
+    :target: https://pypi.python.org/pypi/django-encode
 .. image:: https://travis-ci.org/collab-project/django-encode.svg?branch=master
     :target: https://travis-ci.org/collab-project/django-encode
 .. image:: https://coveralls.io/repos/collab-project/django-encode/badge.svg
