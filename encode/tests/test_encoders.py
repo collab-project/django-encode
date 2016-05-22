@@ -8,15 +8,14 @@ Tests for the :py:mod:`encode.encoders` module.
 
 from __future__ import unicode_literals
 
+from django.test import TestCase
 from django.core.exceptions import ImproperlyConfigured
-
-from django_webtest import WebTest
 
 from encode import encoders, models, EncodeError
 from encode.tests.helpers import DummyDataMixin
 
 
-class GetEncoderClassTestCase(WebTest):
+class GetEncoderClassTestCase(TestCase):
     """
     Tests for :py:func:`encode.encoders.get_encoder_class`.
     """
@@ -53,7 +52,7 @@ class GetEncoderClassTestCase(WebTest):
         self.assertRaises(exception, encoders.get_encoder_class, module_path)
 
 
-class BasicEncoderTestCase(WebTest, DummyDataMixin):
+class BasicEncoderTestCase(TestCase, DummyDataMixin):
     """
     Tests for :py:class:`encode.encoders.BasicEncoder`.
     """
@@ -111,7 +110,7 @@ class BasicEncoderTestCase(WebTest, DummyDataMixin):
             ['convert', '-loglevel', 'fatal', '-y'])
 
 
-class FFMpegEncoderTestCase(WebTest, DummyDataMixin):
+class FFMpegEncoderTestCase(TestCase, DummyDataMixin):
     """
     Tests for :py:class:`encode.encoders.FFMpegEncoder`.
     """

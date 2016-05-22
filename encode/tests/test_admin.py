@@ -8,13 +8,13 @@ Tests for the :py:mod:`encode.admin` module.
 
 from __future__ import unicode_literals
 
-from django.contrib.auth.models import User
+from django.test import TestCase
 from django.core.urlresolvers import reverse
+
+from django.contrib.auth.models import User
 from django.contrib.admin.sites import AdminSite
 
 from webtest import Upload
-
-from django_webtest import WebTest
 
 from encode import admin, models
 from encode.util import get_random_filename, parseMedia
@@ -28,7 +28,7 @@ class MockRequest(object):
 request = MockRequest()
 
 
-class MediaFileAdminTests(WebTest):
+class MediaFileAdminTests(TestCase):
     """
     Tests for :py:class:`encode.admin.MediaFileAdmin`.
     """
@@ -53,7 +53,7 @@ class MediaFileAdminTests(WebTest):
         self.assertEqual(repr(self.mfile), '<MediaFile: The Doors>')
 
 
-class EncoderAdminTests(WebTest):
+class EncoderAdminTests(TestCase):
     """
     Tests for :py:class:`encode.admin.EncoderAdmin`.
     """
@@ -75,7 +75,7 @@ class EncoderAdminTests(WebTest):
         self.assertEqual(ma.list_filter, ('name', 'path'))
 
 
-class EncodingProfileAdminTests(WebTest):
+class EncodingProfileAdminTests(TestCase):
     """
     Tests for :py:class:`encode.admin.EncodingProfileAdmin`.
     """

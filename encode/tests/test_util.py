@@ -10,7 +10,7 @@ from __future__ import unicode_literals
 
 import os
 
-from django_webtest import WebTest
+from django.test import TestCase
 
 from encode.conf import settings
 from encode.tests import helpers
@@ -18,7 +18,7 @@ from encode.tests import helpers
 from encode import models, util, DecodeError, VIDEO, EncodeError, get_version
 
 
-class GetRandomFileNameTestCase(WebTest):
+class GetRandomFileNameTestCase(TestCase):
     """
     Tests for :py:func:`encode.util.get_random_filename`.
     """
@@ -43,7 +43,7 @@ class GetRandomFileNameTestCase(WebTest):
         self.assertEqual(len(fn), 8)
 
 
-class FqnTestCase(WebTest):
+class FqnTestCase(TestCase):
     """
     Tests for :py:func:`encode.util.fqn`.
     """
@@ -55,7 +55,7 @@ class FqnTestCase(WebTest):
         self.assertEqual(result, 'encode.tests.test_util.FqnTestCase')
 
 
-class GetMediaUploadToTestCase(WebTest):
+class GetMediaUploadToTestCase(TestCase):
     """
     Tests for :py:func:`encode.util.get_media_upload_to`.
     """
@@ -78,7 +78,7 @@ class GetMediaUploadToTestCase(WebTest):
         self.assertEqual(result, 'encode_test/video/foo.mp4')
 
 
-class ParseMediaTestCase(WebTest):
+class ParseMediaTestCase(TestCase):
     """
     Tests for :py:func:`encode.util.parseMedia`.
     """
@@ -107,7 +107,7 @@ class ParseMediaTestCase(WebTest):
         self.assertRaises(DecodeError, util.parseMedia, ())
 
 
-class VersionTestCase(WebTest):
+class VersionTestCase(TestCase):
     """
     Tests for :py:mod:`~encode` versioning information.
     """

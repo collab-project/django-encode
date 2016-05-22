@@ -8,12 +8,12 @@ Tests for the :py:mod:`encode.tasks` module.
 
 from __future__ import unicode_literals
 
-from django_webtest import WebTest
+from django.test import TestCase
 
 from encode import models, tasks, EncodeError, UploadError
 
 
-class MediaBaseTestCase(WebTest):
+class MediaBaseTestCase(TestCase):
     """
     Tests for :py:func:`encode.tasks.media_base`.
     """
@@ -25,7 +25,7 @@ class MediaBaseTestCase(WebTest):
         self.assertRaises(models.MediaBase.DoesNotExist, tasks.media_base, 20)
 
 
-class EncodeMediaTestCase(WebTest):
+class EncodeMediaTestCase(TestCase):
     """
     Tests for :py:class:`encode.tasks.EncodeMedia` task.
     """
@@ -48,7 +48,7 @@ class EncodeMediaTestCase(WebTest):
             args=[profile, modelObj.id, '/fake/inputPath', output_path])
 
 
-class StoreMediaTestCase(WebTest):
+class StoreMediaTestCase(TestCase):
     """
     Tests for :py:class:`encode.tasks.StoreMedia` task.
     """
