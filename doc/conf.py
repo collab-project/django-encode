@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright Collab 2012-2015.
+# Copyright Collab 2012-2016.
 #
 # Documentation build configuration file for encode project.
 #
@@ -20,7 +20,7 @@ sys.path.insert(0, os.path.abspath('../encode'))
 
 # Setup Django
 import django
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "encode.tests.settings")
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'encode.tests.settings')
 
 
 # -- General configuration -----------------------------------------------------
@@ -262,7 +262,7 @@ texinfo_documents = [
 # Configuration for intersphinx.
 intersphinx_mapping = {
     'python': ('https://docs.python.org/2/', None),
-    'django': ('https://django.readthedocs.org/en/latest/', None),
-    'sphinx': ('https://sphinx.readthedocs.org/en/latest/', None),
-    'celery': ('https://celery.readthedocs.org/en/latest/', None),
+    'django': ('https://django.readthedocs.io/en/latest/', None),
+    'sphinx': ('https://sphinx.readthedocs.io/en/latest/', None),
+    'celery': ('https://celery.readthedocs.io/en/latest/', None),
 }

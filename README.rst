@@ -29,7 +29,7 @@ Or checkout the source code from Github_::
   pip install -e .
 
 The dependency ``python-video-converter`` is not available on PyPi and needs to be installed
-manually::
+manually. This installs a fork of ``python-video-converter`` that supports ffmpeg 2.x and newer::
 
   pip install -e git+https://github.com/thijstriemstra/python-video-converter.git#egg=python-video-converter
 
@@ -37,10 +37,10 @@ manually::
 Documentation
 -------------
 
-Documentation can be found on `readthedocs.org`_.
+Documentation can be found on `readthedocs.io`_.
 
 
 .. _pip: https://pypi.python.org/pypi/pip
 .. _PyPi: https://pypi.python.org/pypi/django-encode
-.. _readthedocs.org: https://django-encode.readthedocs.org/en/latest
+.. _readthedocs.io: https://django-encode.readthedocs.io/en/latest
 .. _Github: https://github.com/collab-project/django-encode
