@@ -4,5 +4,6 @@ omit =
     setup.py
     runtests.py
     encode/tests/*
+    encode/migrations/*
     .tox/*
     doc/*
