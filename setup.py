@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright Collab 2012-2016
+# Copyright Collab 2012-2017
 # See LICENSE for details.
 
 import os
@@ -37,7 +37,6 @@ setup(
     name='django-encode',
     packages=find_packages(),
     include_package_data=True,
-    tests_require=['tox'],
     cmdclass={'test': Tox},
     version=version,
     description='Django media encoding.',
@@ -54,14 +53,18 @@ setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5'
     ],
     author='Collab',
     author_email='info@collab.nl',
     url='http://github.com/collab-project/django-encode',
     license='MIT',
     install_requires=[
-        'celery>=3.1',
+        'celery>=3.1,<4.0',
         'django-appconf>=0.6',
         'django-queued-storage>=0.8.0'
-    ]
+    ],
+    tests_require=[
+        'tox'
+    ],
 )

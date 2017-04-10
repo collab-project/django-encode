@@ -586,6 +586,7 @@ class Video(MediaBase):
         verbose_name = _("Video Clip")
         verbose_name_plural = _("Video Clips")
 
+
 pre_save.connect(check_file_changed, sender=Video)
 
 
@@ -606,6 +607,7 @@ class Audio(MediaBase):
         verbose_name = _("Audio Clip")
         verbose_name_plural = _("Audio Clips")
 
+
 pre_save.connect(check_file_changed, sender=Audio)
 
 
@@ -625,5 +627,6 @@ class Snapshot(MediaBase):
     class Meta:
         verbose_name = _("Snapshot")
         verbose_name_plural = _("Snapshots")
+
 
 pre_save.connect(check_file_changed, sender=Snapshot)

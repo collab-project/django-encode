@@ -3,7 +3,7 @@ sudo: required
 cache:
   directories:
   - $HOME/.cache/pip
-install: pip install --upgrade pip tox wheel
+install: pip install --upgrade pip setuptools tox wheel
 before_script:
   - wget -q http://johnvansickle.com/ffmpeg/builds/ffmpeg-git-64bit-static.tar.xz
   - tar -xf ffmpeg-*.tar.xz -v
@@ -15,6 +15,14 @@ env:
   - TOXENV=py27-django-17
   - TOXENV=py27-django-18
   - TOXENV=py27-django-19
+  - TOXENV=py27-django-110
+  - TOXENV=py27-django-111
   - TOXENV=py34-django-18
   - TOXENV=py34-django-19
+  - TOXENV=py34-django-110
+  - TOXENV=py34-django-111
+  - TOXENV=py35-django-18
+  - TOXENV=py35-django-19
+  - TOXENV=py35-django-110
+  - TOXENV=py35-django-111
   - TOXENV=coveralls
